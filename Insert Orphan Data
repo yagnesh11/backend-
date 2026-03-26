@@ -1,0 +1,17 @@
+<?php
+include 'db.php';
+
+$name = $_POST['name'];
+$age = $_POST['age'];
+$gender = $_POST['gender'];
+$health = $_POST['health_status'];
+
+$sql = "INSERT INTO orphans (name, age, gender, health_status)
+        VALUES ('$name', '$age', '$gender', '$health')";
+
+if ($conn->query($sql)) {
+    echo "Orphan added successfully";
+} else {
+    echo "Error: " . $conn->error;
+}
+?>
